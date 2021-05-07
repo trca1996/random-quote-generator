@@ -1,56 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import { Route, Switch } from "react-router-dom";
+import { Cached } from "@material-ui/icons";
+import { Button } from "@material-ui/core";
+import Quote from "./components/Quote";
+import Author from "./components/Author";
+import AuthorQuotes from "./screen/AuthorQuotes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div className="app">
+      <div className="app__header">
+        <Button
+          className="app__button"
+          disableElevation
+          endIcon={<Cached className="rotate" />}
+        >
+          Random
+        </Button>
+      </div>
+
+      <div className="app__body">
+        <Switch>
+          <Route exact path="/">
+            <Quote text="The first rule of any technology used in a business is that automation applied to an efficient operation will magnify the efficiency. The second is that automation applied to an inefficient operation will magnify the inefficiency." />
+            <Author name="Bill Gates" genre="business" />
+          </Route>
+          <Route exact path="/author">
+            <AuthorQuotes />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }

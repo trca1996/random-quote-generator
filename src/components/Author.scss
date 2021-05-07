@@ -1,0 +1,40 @@
+.author {
+  margin-top: 30px;
+  padding: 15px;
+  width: 60%;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+
+  h4 {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    color: gray;
+  }
+
+  .MuiButtonBase-root {
+    opacity: 0;
+    margin-left: auto !important;
+    margin-right: 15px !important;
+  }
+
+  &__button {
+    color: whitesmoke !important;
+  }
+
+  &:hover {
+    background-color: #333333;
+
+    h4 {
+      color: whitesmoke;
+    }
+
+    .MuiButtonBase-root {
+      opacity: 1;
+    }
+  }
+}
