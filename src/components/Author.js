@@ -7,6 +7,10 @@ import "./Author.scss";
 function Author({ name, genre }) {
   const history = useHistory();
 
+  const handleClick = () => {
+    history.push("/author");
+  };
+
   return (
     <div className="author">
       <div className="author__text">
@@ -14,7 +18,7 @@ function Author({ name, genre }) {
         <p>{genre}</p>
       </div>
 
-      <IconButton onClick={() => history.push("/author")}>
+      <IconButton onClick={handleClick}>
         <ArrowForward
           className="author__button"
           fontSize="large"

@@ -3,7 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: scroll;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
 
   &__name {
     display: flex;
